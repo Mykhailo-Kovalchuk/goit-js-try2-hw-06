@@ -11,6 +11,7 @@ const input = document.querySelector(".input");
 const matherDiv = document.querySelector("#boxes");
 
 function createBoxes(amount) {
+
   amount = parseFloat(input.value);
 
   if (amount > 100 || amount < 0) {
@@ -63,10 +64,12 @@ function createBoxes(amount) {
     }
 
 
+
     matherDiv.innerHTML = '';
 newDivsArray.forEach(item => {
   matherDiv.append(item);
 });
+
 
 
 btnRemove.addEventListener("click", () => {
@@ -77,5 +80,6 @@ btnRemove.addEventListener("click", () => {
 });
 };
 }
+
 
 btnCreate.addEventListener("click", createBoxes);
