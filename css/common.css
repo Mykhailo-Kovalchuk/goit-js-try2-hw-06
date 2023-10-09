@@ -22,3 +22,13 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+/* task 3 */
+.photo-list {
+display: flex;
+flex-direction: column;
+
+width: 500px;
+margin: 0 auto;
+padding: 0 0 24px 0;
+}

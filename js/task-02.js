@@ -9,12 +9,22 @@ const ingredients = [
 
 const ingredientsList = document.querySelector("#ingredients");
 
-ingredients.forEach((ingredient) => {
-  const elementList = document.createElement("li");
-  elementList.classList.add("item");
+//-------------------------- Мій перший спосіб --------------------
 
-  // console.log(elementList);
-  elementList.textContent = ingredient;
+// ingredients.forEach((ingredient) => {
+//   const elementList = document.createElement("li");
+//   elementList.classList.add("item");
 
-  ingredientsList.append(elementList);
-});
+//   // console.log(elementList);
+//   elementList.textContent = ingredient;
+
+//   ingredientsList.append(elementList);
+// });
+
+
+//-------------------------- Мій другий спосіб спосіб --------------------
+const markup = ingredients.map(element => `
+<li>${element}</li>
+`).join("");
+
+ingredientsList.insertAdjacentHTML('afterbegin', markup);

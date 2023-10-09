@@ -18,28 +18,38 @@ alt: "Dog"
 ];
 
 const gallery = document.querySelector(".gallery");
+
+//-------------------------- Мій перший спосіб --------------------
 // console.log(gallery);
 
-images.forEach(image => {
-  const photoList = document.createElement("li");
-  const photo = document.createElement("img");
-  photo.src = image.url;
-  photo.alt = image.alt;
+// images.forEach(image => {
+//   const photoList = document.createElement("li");
+//   const photo = document.createElement("img");
+//   photo.src = image.url;
+//   photo.alt = image.alt;
 
-  // console.log(image);
-  // console.log(photo);
-  photoList.append(photo);
+//   // console.log(image);
+//   // console.log(photo);
+//   photoList.append(photo);
   
-  photo.style.width = "500px";
+//   photo.style.width = "500px";
 
-  gallery.style.display = 'flex';
-  gallery.style.flexDirection = 'column';
-  gallery.style.gap = "36px";
-  gallery.style.padding = '0'; 
+//   gallery.style.display = 'flex';
+//   gallery.style.flexDirection = 'column';
+//   gallery.style.gap = "36px";
+//   gallery.style.padding = '0'; 
   
-  photoList.style.listStyleType = 'none'; 
-  photoList.style.margin = "0 auto"
+//   photoList.style.listStyleType = 'none'; 
+//   photoList.style.margin = "0 auto"
 
   
-  gallery.append(photoList);
-});
+//   gallery.append(photoList);
+// });
+
+//-------------------------- Мій другий спосіб --------------------
+const markupImages = images.map((image) => `
+<li class="photo-list">
+<img src="${image.url}" alt="${image.alt} class="photo""></li>`
+).join("");
+
+gallery.insertAdjacentHTML('afterbegin', markupImages);
